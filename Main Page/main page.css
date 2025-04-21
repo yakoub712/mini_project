@@ -1,0 +1,117 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  background-color: #f5f7fa93;
+  /* background-image: linear-gradient(to right, rgb(225, 0, 255) ,rgb(16, 255, 243));
+    font-family: 'Roboto', sans-serif;*/
+ /* height: 1450px;*/
+}
+header {
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 2px 2px 20px 1px rgb(199, 193, 193);
+    flex-wrap: wrap;
+    position: fixed;
+    z-index: 1;
+  }
+.photo-1 {
+  width: 100px;
+  height: 80px;
+}
+.h-1 {
+  color: blueviolet;
+  
+}
+.fa-solid {
+  color: #007bff;
+  width: 25px;
+
+}
+
+.WAD {
+  width: 500px;
+  padding: 25px;
+  height: auto;
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 90px;
+  border-radius: 20px;
+  box-shadow: 1px 1px 10px 1px rgb(156, 152, 152);
+  background-color: #ffffff;
+}
+.st-e {
+  text-decoration: none;
+  width: 450px;
+  height: auto;
+  padding: 15px;
+  margin-top: 20px;
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+  border-radius: 20px;
+}
+span {
+  color: rgb(117, 122, 122);
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+p {
+  color: rgb(117, 122, 122);
+  margin-bottom: 25px;
+  font-size: 15px;
+}
+
+a {
+  text-decoration: none;
+}
+.type-qu-1 {
+  padding: 10px;
+  text-align: center;
+  color: black;
+}
+
+.type-qu-1:hover {
+  background: #007bff;
+  border-radius: 15px 30px 30px 0px;
+
+  color: aliceblue;
+}
+.type-qu-2 {
+  padding: 10px;
+  text-align: center;
+  color: black;
+}
+
+.type-qu-2:hover {
+  background: #007bff;
+  border-radius: 15px 30px 30px 0px;
+  color: aliceblue;
+}
+
+main {
+  padding: 50px;
+  position: relative;
+  top: 70px;
+}
+.foot {
+    position: relative;
+    top: 100px;
+padding-top:30px ;
+padding-bottom:30px ;
+ /* border: 2px solid #007bff;*/
+  width: 100%;
+  background-color: rgba(212, 208, 208, 0.555);
+  display: flex;
+  justify-content: space-around;
+
+}
+.h1-k{
+    color:rgb(0, 0, 0);
+}
