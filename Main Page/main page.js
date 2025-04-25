@@ -16,29 +16,3 @@
 //     }
 // });
 
-let exams = [
-    {
-        name: "POO",
-        date: "2025-4-01",
-        time: "10:00",
-        duration: 30,
-        nbrQuestion: 10,
-        link: "#"
-    },
-    {
-        name: "Web Application Development",
-        date: "2025-4-01",
-        time: "10:00",
-        duration: 30,
-        nbrQuestion: 10,
-        link: "#"
-    },
-    {
-        name: "Data Base",
-        date: "2025-4-03",
-        time: "10:00",
-        duration: 30,
-        nbrQuestion: 10,
-        link: "#"
-    }
-]
