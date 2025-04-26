@@ -12,7 +12,7 @@ $conn = new mysqli($host, $user, $pass, $dbname);
 
 // التحقق من نجاح الاتصال
 if ($conn->connect_error) {
-    die(" فشل الاتصال بقاعدة البيانات: " . $conn->connect_error);
+    die("❌ فشل الاتصال بقاعدة البيانات: " . $conn->connect_error);
 }
 
 header("Access-Control-Allow-Origin: *");
@@ -25,29 +25,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = trim($_POST["password"]);
 
     if ($username == "" || $password == "") {
-        echo json_encode(["status" => "error", "message" => " الرجاء إدخال جميع البيانات!"]);
+        echo json_encode(["status" => "error", "message" => "⚠️ الرجاء إدخال جميع البيانات!"]);
         exit;
     }
 
     // استعلام للتحقق من صحة اسم المستخدم وكلمة المرور
-    $stmt = $conn->prepare("SELECT password FROM account WHERE username = ?");
+    $stmt = $conn->prepare("SELECT id, password FROM account WHERE username = ?");
     $stmt->bind_param("s", $username);
     $stmt->execute();
     $stmt->store_result();
 
     if ($stmt->num_rows > 0) {
-        $stmt->bind_result($stored_password);
+        $stmt->bind_result($user_id, $stored_password);
         $stmt->fetch();
 
-      
+        // ✅ مقارنة مباشرة بدون تشفير
         if ($password === $stored_password) {
+            $_SESSION["user_id"] = $user_id;
             $_SESSION["user"] = $username;
-            echo json_encode(["status" => "success", "redirect" => "Main Page/main_page.html"]); // تسجيل دخول ناجح
+            echo json_encode(["status" => "success", "redirect" => "Main Page/main page.html"]); // تسجيل دخول ناجح
         } else {
-            echo json_encode(["status" => "error", "message" => " كلمة المرور غير صحيحة!"]);
+            echo json_encode(["status" => "error", "message" => "❌ كلمة المرور غير صحيحة!"]);
         }
     } else {
-        echo json_encode(["status" => "error", "message" => " اسم المستخدم غير موجود!"]);
+        echo json_encode(["status" => "error", "message" => "❌ اسم المستخدم غير موجود!"]);
     }
 
     if ($_SERVER["REQUEST_METHOD"] === "OPTIONS") {

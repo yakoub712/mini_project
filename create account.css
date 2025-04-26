@@ -1,62 +1,93 @@
 
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #036172;
+    font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 80px;
+    padding-bottom: 50px; 
+}
 
-.group-t{
-    background-color: #ffffff;
-    padding: 10px;
-    width: 460px;
-    position: relative;
-    top: 50px;
-    left: 32%;
+.flex {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.login {
+    width: 30%;
+    background-color: #eee;
+    padding: 30px;
     border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-.login-title{
-    text-align: center;  
-    font-size: 40px;
-    margin-top: 15px;
-    color: rgba(0, 0, 0, 0.87); 
-    
+
+.login > h2 {
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 20px;
+    color: #333;
 }
-.input-label {
-    display: block;
+
+.flex > label {
+    align-self: flex-start;
+    margin-left: 10px;
     margin-bottom: 5px;
     font-size: larger;
-    margin-top: 40px;
-    position: relative;
-    left: 35px;
+    color: #333;
 }
 
-.input-field {
-    width: 350px;
-    position: relative;
-    left: 35px;
+.flex > input {
+    width: 100%;
+    box-sizing: border-box; /* مهم عشان padding ما يأثر على العرض */
     padding: 15px;
     border-radius: 15px;
     border: 1px solid #ccc;
-    margin-top:5px;
-   
 }
-.input-field:hover{
-    border:1px solid #007bff;
+
+.flex > input:hover {
+    border: 1px solid #007bff;
 }
-.login-button {
-    width: 380px;
-    position: relative;
-    left: 35px;
+
+.flex > button {
+    width: 100%;
     padding: 15px;
     background-color: #007bff;
     color: white;
     border: none;
     border-radius: 20px;
     cursor: pointer;
-    margin-top: 40px;
 }
-.p-1{
-        color:#5a5858;
-        position: relative;
-        left: 25%;
+
+.flex > button:hover {
+    background-color: #0056b3;
 }
-.lo-g{
-    text-decoration:none;
+
+#message {
+    margin-top: 10px;
+    text-align: center;
+    color: red;
+}
+
+.p-1 {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 14px;
+    color: #5a5858;
+}
+
+.p-1 a {
+    text-decoration: none;
     color: #007bff;
-    
+}
+
+.p-1 a:hover {
+    text-decoration: underline;
 }
