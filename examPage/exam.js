@@ -200,7 +200,7 @@ submit.onclick = () => {
       }
     })
   })
-  console.log(result);
+  console.log(result); // النتيجة النهائية
   // Display the result
   let score = document.getElementById("score");
   score.innerHTML = `Your score is ${result} out of ${module.map(q => q.point).reduce((a, b) => a + b)}`;
@@ -228,7 +228,7 @@ submit.onclick = () => {
 
 // Timer
 const display = document.getElementById("timer");
-let timeLeft = 10 * 60; // 30 minutes in seconds
+let timeLeft = 1 * 60; // 30 minutes in seconds
 
 function updateTimer() {
   const minutes = Math.floor(timeLeft / 60);
@@ -240,6 +240,37 @@ function updateTimer() {
   } else {
     clearInterval(timer);
     // Do something when the timer ends
+    submit.disabled = true;
+    submit.style.backgroundColor = "gray";
+    submit.style.cursor = "not-allowed";
+    // diseable the radio buttons
+    let inputs = document.querySelectorAll("input[type='radio']");
+    inputs.forEach((input) => {
+      input.disabled = true;
+    })
+
+
+    module.map((q, i) => {
+      if (document.querySelector(`input[name="${i}"]:checked`)) { // check if the question is answered
+        answers.push(document.querySelector(`input[name="${i}"]:checked`).value);
+      }
+    })
+
+    // Culc the score
+    let result = 0;
+    answers.map((a) => {
+      module.map((q) => {
+        if (a != null && q.choices.includes(a)) {
+          if (a == q.answer) {
+            result += q.point;
+          }
+        }
+      })
+    })
+    console.log(result); // النتيجة النهائية
+    // Display the result
+    let score = document.getElementById("score");
+    score.innerHTML = `Your score is ${result} out of ${module.map(q => q.point).reduce((a, b) => a + b)}`;
     alert("Time's up!");
   }
 }
