@@ -1,18 +1,34 @@
-// document.addEventListener("DOMContentLoaded", function () {
-//     let username = localStorage.getItem("username");
-//     let userId = localStorage.getItem("userid");
-//     let fullName = localStorage.getItem("full_name");
-//     let email = localStorage.getItem("email");
-//     let group = localStorage.getItem("group_n");
+// الكود الخاص بعرض بيانات المستخدم بعد التحقق من تسجيل الدخول
 
-//     if (username && userId) {
-//         document.getElementById("username").innerText = `👤 اسم المستخدم: ${username}`;
-//         document.getElementById("userid").innerText = `🆔 رقم التسجيل: ${userId}`;
-//         document.getElementById("fullName").innerText = `📌 الاسم الكامل: ${fullName}`;
-//         document.getElementById("email").innerText = `📧 البريد الإلكتروني: ${email}`;
-//         document.getElementById("group").innerText = `🔹 المجموعة: ${group}`;
-//     } else {
-//         document.getElementById("userInfo").innerText = "⚠️ لم يتم العثور على بيانات المستخدم!";
-//     }
-// });
-
+// دالة لاسترجاع البيانات من PHP
+function fetchUserData() {
+    fetch('main_page.php')  // استرجاع البيانات من صفحة PHP
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('حدث خطأ أثناء الاتصال بـ main_page.php');
+        }
+        return response.json();  // تحويل الاستجابة إلى JSON
+      })
+      .then(data => {
+        if (data.status === "success") {
+          // عرض البيانات في الصفحة إذا كان المستخدم مسجلاً
+          document.getElementById('userData').innerHTML = `
+            <p>اسم المستخدم: ${data.username}</p>
+            <p>معرف المستخدم: ${data.user_id}</p>
+            
+          `;
+        } else {
+          // إذا لم يتم تسجيل الدخول، عرض رسالة
+          document.getElementById('userData').innerText = data.message;
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        // عرض رسالة خطأ إذا حدث مشكلة في الاتصال
+        document.getElementById('userData').innerText = "حدث خطأ أثناء استرجاع البيانات.";
+      });
+  }
+  
+  // استدعاء الدالة عند تحميل الصفحة
+  window.onload = fetchUserData;
+  
