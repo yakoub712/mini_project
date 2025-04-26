@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  let button = document.querySelector(".login button");
+  let button = document.querySelector("button");
 
   if (!button) {
     console.error(
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function sendRegisterData() {
-  let formData = new FormData(document.querySelector(".login"));
+  let formData = new FormData(document.querySelector("form")); // ✅ جمع البيانات من النموذج
 
   console.log("🔹 بيانات قبل الإرسال:", Object.fromEntries(formData));
 

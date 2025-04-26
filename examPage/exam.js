@@ -4,6 +4,17 @@
 
 
 console.log(window.location.href.split("=")[1]);
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'F5' || (e.ctrlKey && e.key === 'r')) {
+    e.preventDefault();
+    alert('Reload is disabled on this page.');
+  }
+});
+
+// window.addEventListener('beforeunload', function (e) {
+//   e.preventDefault();
+//   e.returnValue = '';
+// });
 
 let oop = [
   {
@@ -38,41 +49,137 @@ let oop = [
     ],
     answer: "To hide the internal state and require all interaction to be performed through an object's methods",
     point: 1
-  }
-]
-let lth = [
-  {
-    question: "What does LTH stand for?",
-    choices: [
-      "Learning Through Hands-on", "Learning Through Theory"
-    ],
-    answer: "Learning Through Hands-on",
-    point: 3
   },
   {
-    question: "Which of the following is a benefit of LTH?",
+    question: "Which of the following is an example of polymorphism in OOP?",
     choices: [
-      "Increased engagement and retention", "Less time-consuming"
+      "A function that can take different types of arguments", "A class that can inherit from multiple classes"
     ],
-    answer: "Increased engagement and retention",
+    answer: "A function that can take different types of arguments",
     point: 2
   },
   {
-    question: "What is a common method used in LTH?",
+    question: "What is the purpose of a constructor in a class?",
     choices: [
-      "Lectures", "Workshops"
+      "To initialize the object's properties", "To define the methods of the class"
     ],
-    answer: "Workshops",
+    answer: "To initialize the object's properties",
     point: 1
   },
   {
-    question: "LTH is primarily focused on which type of learning?",
+    question: "In OOP, what is the term for a blueprint for creating objects?",
     choices: [
-      "Practical", "Theoretical"
+      "Class", "Object", "Instance", "Method"
     ],
-    answer: "Practical",
+    answer: "Class",
     point: 2
-  }
+  },
+  {
+    question: "What is the term for a function that is defined inside a class?",
+    choices: [
+      "Method", "Function", "Procedure", "Routine"
+    ],
+    answer: "Method",
+    point: 3
+  },
+  {
+    question: "In OOP, what is the term for a variable that belongs to a class rather than an instance of the class?",
+    choices: [
+      "Instance variable", "Class variable", "Static variable", "Global variable"
+    ],
+    answer: "Class variable",
+    point: 2
+  },
+  {
+    question: "Which of the following is not a type of inheritance in OOP?",
+    choices: [
+      "Single inheritance", "Multiple inheritance", "Multilevel inheritance", "Circular inheritance"
+    ],
+    answer: "Circular inheritance",
+    point: 3
+  },
+]
+let bdd = [
+  {
+    question: "What does SQL stand for?",
+    choices: [
+      "Structured Query Language", "Structured Question Language"
+    ],
+    answer: "Structured Query Language",
+    point: 2,
+  },
+  {
+    question: "Which SQL statement is used to extract data from a database?",
+    choices: [
+      "GET", "SELECT"
+    ],
+    answer: "SELECT",
+    point: 1
+  },
+  {
+    question: "Which SQL statement is used to update data in a database?",
+    choices: [
+      "UPDATE", "MODIFY"
+    ],
+    answer: "UPDATE",
+    point: 3
+  },
+  {
+    question: "Which SQL statement is used to delete data from a database?",
+    choices: [
+      "DELETE", "REMOVE"
+    ],
+    answer: "DELETE",
+    point: 1
+  },
+  {
+    question: "Which SQL statement is used to create a new table in a database?",
+    choices: [
+      "CREATE TABLE", "NEW TABLE", "MAKE TABLE", "ADD TABLE"
+    ],
+    answer: "CREATE TABLE",
+    point: 2
+  },
+  {
+    question: "Which SQL statement is used to add a new column to an existing table?",
+    choices: [
+      "ALTER TABLE", "ADD COLUMN", "MODIFY TABLE", "CHANGE TABLE"
+    ],
+    answer: "ALTER TABLE",
+    point: 2
+  },
+  {
+    question: "Which SQL statement is used to remove a table from a database?",
+    choices: [
+      "DROP TABLE", "DELETE TABLE", "REMOVE TABLE", "CLEAR TABLE"
+    ],
+    answer: "DROP TABLE",
+    point: 2
+  },
+  {
+    question: "Which SQL function is used to count the number of rows in a table?",
+    choices: [
+      "COUNT()", "SUM()", "TOTAL()", "NUM()"
+    ],
+    answer: "COUNT()",
+    point: 2
+  },
+  {
+    question: "Which SQL clause is used to filter records?",
+    choices: [
+      "WHERE", "FILTER"
+    ],
+    answer: "WHERE",
+    point: 2
+  },
+  {
+    question: "Which SQL statement is used to create a view?",
+    choices: [
+      "CREATE VIEW", "NEW VIEW", "MAKE VIEW", "ADD VIEW"
+    ],
+    answer: "CREATE VIEW",
+    point: 3
+  },
 ]
 let wad = [
   {
@@ -89,7 +196,7 @@ let wad = [
       "<break>", "<br>"
     ],
     answer: "<br>",
-    point: 1,
+    point: 2,
   },
   {
     question: "Which HTML attribute specifies an alternate text for an image, if the image cannot be displayed?",
@@ -106,6 +213,54 @@ let wad = [
     ],
     answer: "<title>",
     point: 3
+  },
+  {
+    question: "Which HTML element is used to define the structure of a web page?",
+    choices: [
+      "<div>", "<section>"
+    ],
+    answer: "<div>",
+    point: 2
+  },
+  {
+    question: "What does CSS stand for?",
+    choices: [
+      "Cascading Style Sheets", "Cascading Style System", "Cascading Style Script", "Cascading Style Syntax"
+    ],
+    answer: "Cascading Style Sheets",
+    point: 2
+  },
+  {
+    question: "Which property is used to change the background color in CSS?",
+    choices: [
+      "bgcolor", "background-color", "color", "background"
+    ],
+    answer: "background-color",
+    point: 2
+  },
+  {
+    question: "Which CSS property controls the text size?",
+    choices: [
+      "font-size", "text-size", "text-style", "font-style"
+    ],
+    answer: "font-size",
+    point: 2
+  },
+  {
+    question: "Which CSS property is used to change the text color of an element?",
+    choices: [
+      "text-color", "color", "font-color", "background-color"
+    ],
+    answer: "color",
+    point: 2
+  },
+  {
+    question: "Which HTML element is used to define an internal style sheet?",
+    choices: [
+      "<style>", "<css>"
+    ],
+    answer: "<style>",
+    point: 2
   }
 ]
 let module;
@@ -120,8 +275,8 @@ switch (exam) {
     module = oop;
     break;
   case "lth":
-    var examName = "Learning Through Hands-on Exam";
-    module = lth;
+    var examName = "DataBase Exam";
+    module = bdd;
     break;
   default:
     var examName = "Unknown Exam";
@@ -217,7 +372,7 @@ submit.onclick = () => {
   // stop the timer
   clearInterval(timer);
   // disable the timer
-  display.style.display = "none";
+  // display.style.display = "none";
 
   // add back
   let back = document.getElementById("back");
@@ -228,7 +383,7 @@ submit.onclick = () => {
 
 // Timer
 const display = document.getElementById("timer");
-let timeLeft = 1 * 60; // 30 minutes in seconds
+let timeLeft = 20 * 60; // 30 minutes in seconds
 
 function updateTimer() {
   const minutes = Math.floor(timeLeft / 60);

@@ -42,7 +42,7 @@ header {
 
 main {
   display: flex;
-  padding: 10px 20px;
+  padding: 30px 20px;
 }
 
 main>div {
@@ -56,6 +56,9 @@ main>div {
 /* nav STYLE */
 nav {
   position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 nav h3 {
@@ -69,6 +72,8 @@ nav h3 {
 .exam-nav {
   display: flex;
   flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
   gap: 16px;
 }
 
@@ -200,4 +205,50 @@ article ul li {
 
 .h1-k {
   color: rgb(0, 0, 0);
+}
+
+
+footer {
+  display: flex;
+  justify-content: space-around;
+  padding-block: 40px;
+  background-color: #152b42;
+}
+
+footer .student-info {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+footer .student-info>div {
+  display: flex;
+  gap: 30px;
+}
+
+footer .student-note {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+footer .student-note p {
+  margin: 0;
+}
+
+footer h3 {
+  margin-top: 0;
+  color: #eee;
+}
+
+footer p {
+  color: #aaa;
+}
+
+footer span {
+  font-size: large;
+  font-weight: bold;
+  color: #fff;
 }

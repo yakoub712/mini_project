@@ -1,37 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create account</title>
     <link rel="stylesheet" href="create account.css">
-    <link rel="stylesheet" href="create account.css">
 </head>
+
 <body>
-<form  action="http://localhost/min_p/register.php" method="POST"class="login" >
-        <h2>Create Account</h2>
-        <div class="flex">
-                 <label>username</label>
-                 <input type="text" placeholder="Choose a username" name="username" required>
-                 <label>Password</label>
-                 <input type="password" id="" placeholder="Choose a password" name="password" required> 
-                 <label>Id</label>
-                 <input type="text" placeholder="Enter your id" name="id" required>
-                 <label>Full name</label>
-                 <input type="text" placeholder="Enter your full name" name="full_name" required>
-                 <label>Email</label>
-                 <input type="email" placeholder="Enter your full email" name="email" required>
-                 <label>Group Number</label>
-                 <input type="number" placeholder="Enter your group number" max="10" min="1" name="group_n" required>
-             
-                 <button type="submit">
-                    <i class="fa-solid fa-user-plus"></i> Sign up
-                  </button>
-                  <div id="message"></div>
-                  <p class="p-1">Dont have an account ? <a href="Authentication Page.html" class="lo-g"> Login </a></p> 
-        </div> 
-    </form>
+    <header>
+        <img src="https://upload.wikimedia.org/wikipedia/ar/archive/a/a7/20170617013644%21Logo-umbb-crsic.png" alt=""
+            class="logo" />
+        <div>
+            <h1 class="h-1">
+                UMBB - Faculty Of Science - Department of Computer Science
+            </h1>
+        </div>
+    </header>
+    <div class="container">
+
+        <form action="" method="POST" class="login">
+            <h2>Create Account</h2>
+            <div class="flex">
+                <div>
+                    <h3>username</h3>
+                    <input type="text" placeholder="Choose a username" name="username" required>
+                    <h3>Password</h3>
+                    <input type="password" id="" placeholder="Choose a password" name="password" required>
+                    <h3>Email</h3>
+                    <input type="email" placeholder="Enter your full email" name="email" required>
+                </div>
+                <div>
+                    <h3>Full name</h3>
+                    <input type="text" placeholder="Enter your full name" name="full_name" required>
+                    <h3>Group Number</h3>
+                    <input type="number" placeholder="Enter your group number" max="10" min="1" name="group_n" required>
+                    <h3>Id</h3>
+                    <input type="text" placeholder="Enter your id" name="id" required>
+                </div>
+            </div>
+
+            <a href="Main Page/main page.html" class="submit">
+                <i class="fa-solid fa-user-plus"></i> Sign up
+            </a>
+            <div id="message"></div>
+            <p class="p-1">Dont have an account ? <a href="Authentication Page.html" class="lo-g"> Login </a></p>
+        </form>
+    </div>
     <script src="register.js"></script>
 
-    </body>
+</body>
+
 </html>
